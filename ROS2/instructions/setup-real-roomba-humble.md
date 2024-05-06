@@ -117,14 +117,12 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     export SVGA_VGPU10=0
     ```
 
-## Raspberry Pi 4のセットアップ
+## Roomba SBC(Raspberry Pi 4)のセットアップ
 
 ### Ubuntu 22.04 LTS Serverのインストール
 
 1. PCでRaspberry pi imager をダウンロードして実行します。
 1. インストールするOSはOther general-purpose OSから、Ubuntu Server 22.04.03 LTS (64-bit)を選択して、microSDカードに書き込みます。
-
-### Raspberry Pi 4の環境設定
 1. Raspberry pi にHDMIモニタ、USBキーボードを接続し、作成したmicroSDカードをセットして電源を投入する。
 1. 立ち上がったらログインする。英語キーボード配列なので注意。
     - 初期アカウントは　ubuntu/ubuntu
