@@ -17,7 +17,7 @@ graph TD
         direction TB
     end
   end
-  
+
   subgraph PC
     direction TB
     subgraph B3[turtlebot3_teleop]
@@ -34,8 +34,8 @@ graph TD
     end
   end
     
-C3 -- Serial --> Roomba
-C2 -- Serial --> LiDAR
+C3 <-- Serial --> Roomba
+C2 <-- Serial --> LiDAR
 SBC <-- WiFi --> PC
 B3 -- /cmd_vel --> C3
 C2 -- /scan --> B7
