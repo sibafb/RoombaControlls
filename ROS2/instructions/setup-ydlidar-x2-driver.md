@@ -1,4 +1,4 @@
-# YDLiDAR X2 をROS2 Foxyで動かす手順
+# YDLiDAR X2 を動かす手順
 
 すでにワークスペース ~/create_ws ができている前提の手順です。
 

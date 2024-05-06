@@ -1,4 +1,4 @@
-# SLAMTEC RPLIDAR A1をROS2 Foxyで動かす手順
+# SLAMTEC RPLIDAR A1を動かす手順
 
 すでにワークスペース ~/create_ws ができている前提の手順です。
 
@@ -19,7 +19,7 @@ https://github.com/Slamtec/sllidar_ros2
     ```
     diagnostic-updaterがないというエラーが出たので以下の手順でインストール
     ```
-    $ sudo apt-get install ros-foxy-diagnostic-updater
+    $ sudo apt install ros-humble-diagnostic-updater
     $ colcon build --symlink-install
     ```
 

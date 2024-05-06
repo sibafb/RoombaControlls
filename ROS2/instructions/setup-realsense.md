@@ -132,8 +132,6 @@ https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linu
 
 ### realsense-rosのインストール
 
-ここではfoxyを使っています。
-
 ROS2 Wrapper for Intel® RealSense™ Devices を使います。
 
 以下のInstallation Instructionsに従ってインストールします。  
@@ -185,5 +183,3 @@ ros2 launch realsense2_camera rs_launch.py
 ros2 run opencv_ros2 face_detection --ros-args --remap image_raw:=camera/color/image_raw
 ```
 ![rqt_graph](/ROS2/instructions/images/realsense_rosgraph_5_5_2.png)
-
-
