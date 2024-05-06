@@ -1,4 +1,4 @@
-# ROS2を使ってRoombaを動かしてみようというサブプロジェクト
+# ROS2 Humbleを使ってRoombaを動かしてみようというサブプロジェクト
 
 ## instructions
   - [setup-real-roomba-humble.md](instructions/setup-real-roomba-humble.md) Roomba実機をROS2 Humbleで動かす環境のセットアップ
