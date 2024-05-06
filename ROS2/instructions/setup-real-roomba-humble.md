@@ -108,8 +108,8 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     
 1. turtlebot3のパッケージインストール
     ```
-    $ sudo apt install ros-foxy-turtlebot3-msgs
-    $ sudo apt install ros-foxy-turtlebot3
+    $ sudo apt install ros-humble-turtlebot3-msgs
+    $ sudo apt install ros-humble-turtlebot3
     ```
 
 1. VMwareの場合は以下の環境変数を~/.bashrcに設定します。(RvizやGazeboがOpenGL2系のため。)
@@ -190,7 +190,7 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     ```
     $ git clone https://github.com/Tiryoh/ros2_setup_scripts_ubuntu.git
     $ cd ros2_setup_scripts_ubuntu
-    $ ./run.sh
+    $ ./ros2-humble-ros-base-main.sh
     ```
     ROS2 Humbleのインストールと.bashrcの設定まで行ってくれます。
     
