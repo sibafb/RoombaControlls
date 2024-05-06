@@ -7,7 +7,17 @@
 * SLAM
 
 ```mermaid
-flowchart TB
+graph TD
+  subgraph SBC
+    direction TB
+    subgraph C2[ydlidar_ros2_driver_node]
+        direction TB
+    end
+    subgraph C3[create_driver]
+        direction TB
+    end
+  end
+  
   subgraph PC
     direction TB
     subgraph B3[turtlebot3_teleop]
@@ -23,21 +33,14 @@ flowchart TB
         direction TB
     end
   end
-  subgraph Roomba
-    direction TB
-    subgraph C2[ydlidar_ros2_driver_node]
-        direction TB
-    end
-    subgraph C3[create_driver]
-        direction TB
-    end
-  end
+    
+C3 -- Serial --> Roomba
+C2 -- Serial --> LiDAR
+SBC <-- WiFi --> PC
 B3 -- /cmd_vel --> C3
 C2 -- /scan --> B7
 C3 -- /tf --> B7
 B7 --> B8
-Roomba <--> WiFi
-PC <--> WiFi
 ```
 
 * Nav2
