@@ -13,5 +13,5 @@
   <include if="$(var desc)" file="$(find-pkg-share create_description)/launch/create_2.launch" />
 
   <!-- Laser scan -->
-  <include if="$(var desc)" file="$(find-pkg-share ydlidar_ros2_driver)/launch/ydlidar_launch.py" />
+  <include if="$(var laser)" file="$(find-pkg-share ydlidar_ros2_driver)/launch/ydlidar_launch.py" />
 </launch>
