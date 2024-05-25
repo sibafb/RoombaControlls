@@ -20,7 +20,7 @@
 1. 以下の手順でインストールします。ydlidra_ros2_driverが最新版です。ydlidar_ros2は古いものなので間違ってcloneしないでください。 （ここではまった）
     ```
     $ cd ~/create_ws/src
-    $ git clone https://github.com/YDLIDAR/ydlidar_ros2_driver.git
+    $ git clone -b humble https://github.com/YDLIDAR/ydlidar_ros2_driver.git
     $ cd ~/create_ws
     $ colcon build --symlink-install
     ```

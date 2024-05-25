@@ -163,8 +163,8 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     ```
 1. 自動更新が行われないように設定を変更します。
     ```
-    $ sudo vi /etc/apt/apt.conf.d/S20auto-upgrades
-    $ cat S20auto-upgrades
+    $ sudo vi /etc/apt/apt.conf.d/20auto-upgrades
+    $ cat 20auto-upgrades
     APT::Periodic::Update-Package-Lists "0";
     APT::Periodic::Unattended-Upgrade "0";
     ```
