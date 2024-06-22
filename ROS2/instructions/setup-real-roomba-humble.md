@@ -7,7 +7,17 @@
 * SLAM
 
 ```mermaid
-flowchart TB
+graph TD
+  subgraph SBC
+    direction TB
+    subgraph C2[ydlidar_ros2_driver_node]
+        direction TB
+    end
+    subgraph C3[create_driver]
+        direction TB
+    end
+  end
+
   subgraph PC
     direction TB
     subgraph B3[turtlebot3_teleop]
@@ -23,21 +33,14 @@ flowchart TB
         direction TB
     end
   end
-  subgraph Roomba
-    direction TB
-    subgraph C2[ydlidar_ros2_driver_node]
-        direction TB
-    end
-    subgraph C3[create_driver]
-        direction TB
-    end
-  end
+    
+C3 <-- Serial --> Roomba
+C2 <-- Serial --> LiDAR
+SBC <-- WiFi --> PC
 B3 -- /cmd_vel --> C3
 C2 -- /scan --> B7
 C3 -- /tf --> B7
 B7 --> B8
-Roomba <--> WiFi
-PC <--> WiFi
 ```
 
 * Nav2
@@ -108,8 +111,8 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     
 1. turtlebot3のパッケージインストール
     ```
-    $ sudo apt install ros-foxy-turtlebot3-msgs
-    $ sudo apt install ros-foxy-turtlebot3
+    $ sudo apt install ros-humble-turtlebot3-msgs
+    $ sudo apt install ros-humble-turtlebot3
     ```
 
 1. VMwareの場合は以下の環境変数を~/.bashrcに設定します。(RvizやGazeboがOpenGL2系のため。)
@@ -117,14 +120,12 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     export SVGA_VGPU10=0
     ```
 
-## Raspberry Pi 4のセットアップ
+## Roomba SBC(Raspberry Pi 4)のセットアップ
 
 ### Ubuntu 22.04 LTS Serverのインストール
 
 1. PCでRaspberry pi imager をダウンロードして実行します。
 1. インストールするOSはOther general-purpose OSから、Ubuntu Server 22.04.03 LTS (64-bit)を選択して、microSDカードに書き込みます。
-
-### Raspberry Pi 4の環境設定
 1. Raspberry pi にHDMIモニタ、USBキーボードを接続し、作成したmicroSDカードをセットして電源を投入する。
 1. 立ち上がったらログインする。英語キーボード配列なので注意。
     - 初期アカウントは　ubuntu/ubuntu
@@ -162,8 +163,8 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     ```
 1. 自動更新が行われないように設定を変更します。
     ```
-    $ sudo vi /etc/apt/apt.conf.d/S20auto-upgrades
-    $ cat S20auto-upgrades
+    $ sudo vi /etc/apt/apt.conf.d/20auto-upgrades
+    $ cat 20auto-upgrades
     APT::Periodic::Update-Package-Lists "0";
     APT::Periodic::Unattended-Upgrade "0";
     ```
@@ -190,7 +191,7 @@ Roombaにはシリアルポートが搭載されており、インターフェ�
     ```
     $ git clone https://github.com/Tiryoh/ros2_setup_scripts_ubuntu.git
     $ cd ros2_setup_scripts_ubuntu
-    $ ./run.sh
+    $ ./ros2-humble-ros-base-main.sh
     ```
     ROS2 Humbleのインストールと.bashrcの設定まで行ってくれます。
     
